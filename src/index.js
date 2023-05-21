@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -16,5 +16,41 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  async bootstrap({ strapi }) {
+    // create user admin if it doesn't exist
+    // await strapi.admin.services.role.createRolesIfNoneExist();
+    // const superAdminRole = await strapi.db.query('admin::role').findOne({where: {code: 'strapi-super-admin'}});
+    // const superAdmin = await strapi.db.query('admin::user').findOne({where: {username: 'admin'}});
+    // if (!superAdmin) {
+    //   const params = {
+    //     username: 'admin',
+    //     email: 'admin@email.com',
+    //     blocked: false,
+    //     isActive: true,
+    //     confirmed: true,
+    //     password: null,
+    //     roles: null
+    //   }
+    //   params.password = await strapi.admin.services.auth.hashPassword("Admin1234");
+    //   params.roles = [superAdminRole.id]
+    //   await strapi.db.query("admin::user").create({
+    //     data: {...params},
+    //     populate: ['roles']
+    //   });
+    // }
+    console.log("=========== creating customers ==========");
+    // const result = await strapi.admin.services.customers.create({
+    //   firstName: "test",
+    //   lastName:"testLast"
+    // });
+
+    const entry = await strapi.entityService.create('api::customer.customer', {
+      data: {
+        firstName: "test",
+        lastName:"testLast"
+      },
+    });
+    
+    console.log("=========== creating customers done ==========", entry);
+  },
 };
