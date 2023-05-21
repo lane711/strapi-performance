@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "float"
+    },
+    "order_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-detail.order-detail",
+      "mappedBy": "product"
+    }
+  }
+}
