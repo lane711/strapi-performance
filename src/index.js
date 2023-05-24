@@ -1,4 +1,5 @@
 "use strict";
+const { faker } = require("@faker-js/faker");
 
 module.exports = {
   /**
@@ -17,40 +18,72 @@ module.exports = {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }) {
-    // create user admin if it doesn't exist
-    // await strapi.admin.services.role.createRolesIfNoneExist();
-    // const superAdminRole = await strapi.db.query('admin::role').findOne({where: {code: 'strapi-super-admin'}});
-    // const superAdmin = await strapi.db.query('admin::user').findOne({where: {username: 'admin'}});
-    // if (!superAdmin) {
-    //   const params = {
-    //     username: 'admin',
-    //     email: 'admin@email.com',
-    //     blocked: false,
-    //     isActive: true,
-    //     confirmed: true,
-    //     password: null,
-    //     roles: null
-    //   }
-    //   params.password = await strapi.admin.services.auth.hashPassword("Admin1234");
-    //   params.roles = [superAdminRole.id]
-    //   await strapi.db.query("admin::user").create({
-    //     data: {...params},
-    //     populate: ['roles']
+    console.log("=========== creating data ==========");
+
+    //customers
+    // const count = 150000;
+    // for (let index = 0; index < count; index++) {
+    //   const data = {
+    //     firstName: faker.person.firstName(),
+    //     lastName: faker.person.lastName(),
+    //   };
+    //   const entry = await strapi.entityService.create("api::customer.customer", {
+    //     data,
     //   });
     // }
-    console.log("=========== creating customers ==========");
-    // const result = await strapi.admin.services.customers.create({
-    //   firstName: "test",
-    //   lastName:"testLast"
-    // });
 
-    const entry = await strapi.entityService.create('api::customer.customer', {
-      data: {
-        firstName: "test",
-        lastName:"testLast"
-      },
-    });
-    
-    console.log("=========== creating customers done ==========", entry);
+    //products
+    // const count = 250000;
+    // for (let index = 0; index < count; index++) {
+    //   const data = {
+    //     name: faker.commerce.product(),
+    //     cost: faker.commerce.price(),
+    //   };
+    //   const result = await strapi.entityService.create("api::product.product", {
+    //     data,
+    //   });
+    //   console.log('result', result)
+    // }
+
+    //orders
+    // const count = 500000;
+    // for (let index = 0; index < count; index++) {
+    //   const data = {
+    //     paymentCompleteOn: faker.date.recent(),
+    //     total: faker.commerce.price(),
+    //   };
+    //   const result = await strapi.entityService.create("api::order.order", {
+    //     data,
+    //   });
+    //   console.log('result', result)
+    // }
+
+    //orders details
+    // const count = 1000000;
+    // for (let index = 0; index < count; index++) {
+    //   const data = {
+    //     created_by_id:1,
+    //     updated_by_id: 1
+    //   };
+    //   const result = await strapi.entityService.create("api::order-detail.order-detail", {
+    //     data,
+    //   });
+    //   console.log("result", result);
+    // }
+
+    //orders to details
+    // const count = 1;
+    // for (let index = 0; index < count; index++) {
+    //   const data = {
+    //     order_id:1,
+    //     order_detail_id: 77
+    //   };
+    //   const result = await strapi.entityService.create("api::order-details-order-links.order-details-order-links", {
+    //     data,
+    //   });
+    //   console.log("result", result);
+    // }
+
+    console.log("=========== creating data done ==========");
   },
 };

@@ -25,8 +25,17 @@
     "orders": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::order.order",
-      "mappedBy": "customer"
+      "target": "api::order.order"
+    },
+    "order_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-detail.order-detail"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
     }
   }
 }

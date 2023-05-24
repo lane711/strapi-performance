@@ -1207,6 +1207,11 @@
   resolved "https://registry.npmjs.org/@esbuild/darwin-x64/-/darwin-x64-0.16.17.tgz"
   integrity sha512-2By45OBHulkd9Svy5IOCZt376Aa2oOkiE9QWUK9fe6Tb+WDr8hXL3dpqi+DeLiMed8tVXspzsTAvd0jUl96wmg==
 
+"@faker-js/faker@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.npmjs.org/@faker-js/faker/-/faker-8.0.1.tgz"
+  integrity sha512-kbh5MenpTN9U0B4QcOI1NoTPlZHniSYQ3BHbhAnPjJGAmmFqxoxTE4sGdpy7ZOO9038DPGCuhXyMkjOr05uVwA==
+
 "@fingerprintjs/fingerprintjs@3.4.1":
   version "3.4.1"
   resolved "https://registry.npmjs.org/@fingerprintjs/fingerprintjs/-/fingerprintjs-3.4.1.tgz"
